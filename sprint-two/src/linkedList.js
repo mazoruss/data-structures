@@ -4,9 +4,15 @@ var LinkedList = function() {
   list.tail = null;
 
   list.addToTail = function(value) {
+      var addNode = Node(value);
+
+      list.tail = addNode;
+
   };
 
   list.removeHead = function() {
+      list.head = list.tail;
+      list.tail = null;
   };
 
   list.contains = function(target) {
