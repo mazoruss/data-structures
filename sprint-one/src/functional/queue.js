@@ -9,19 +9,19 @@ var Queue = function() {
   // Implement the methods below
 
   someInstance.enqueue = function(value) { 
-      counter++;
-      storage[counter] = value;
+    counter++;
+    storage[counter] = value;
   };
 
   someInstance.dequeue = function() {
-      if (counter-loc>0) {
-	  loc++;
-      }
-      return storage[loc];
+    if (counter - loc > 0) {
+      loc++;
+    }
+    return storage[loc];
   };
 
   someInstance.size = function() {
-      return counter-loc;
+    return counter - loc;
   };
 
   return someInstance;
