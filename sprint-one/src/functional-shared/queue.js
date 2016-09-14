@@ -27,7 +27,7 @@ var queueMethods = {
   },
 
   dequeue: function() {
-    if (this.counter - this.loc > 0) {
+    if (this.size() > 0) {
       this.loc++;
       return this.storage[this.loc - 1];
     }

@@ -8,16 +8,16 @@ var Queue = function() {
 
   // Implement the methods below
 
-  someInstance.enqueue = function(value) { 
-    counter++;
+  someInstance.enqueue = function(value) {
     storage[counter] = value;
+    counter++;
   };
 
   someInstance.dequeue = function() {
     if (counter - loc > 0) {
       loc++;
     }
-    return storage[loc];
+    return storage[loc-1];
   };
 
   someInstance.size = function() {
