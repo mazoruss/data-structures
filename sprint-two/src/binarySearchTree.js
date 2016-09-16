@@ -9,17 +9,13 @@ var BinarySearchTree = function(value) {
 var BSTMethods = {};
 BSTMethods.insert = function(value) {
   if (value > this.value) {
-    if (!this.right) {
-      this.right = new BinarySearchTree(value);
-    } else {
+    !this.right ?
+      this.right = new BinarySearchTree(value) :
       this.right.insert(value);
-    }
   } else if (value < this.value) {
-    if (!this.left) {
-      this.left = new BinarySearchTree(value);
-    } else {
+    !this.left ? 
+      this.left = new BinarySearchTree(value) :
       this.left.insert(value);
-    }
   }
 };
 
@@ -42,7 +38,6 @@ BSTMethods.contains = function(value) {
 };
 
 BSTMethods.depthFirstLog = function(callback) {
-  console.log(callback);
   callback(this.value);
   if (this.left) {
     this.left.depthFirstLog(callback);

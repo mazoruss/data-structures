@@ -1,9 +1,9 @@
-var Tree = function(value) {
+var Tree = function(value, parent) {
   var newTree = Object.create(treeMethods);
-  newTree.value = value;
 
-  // your code here
-  newTree.children = null;  // fix me
+  newTree.value = value;
+  newTree.children = null;
+  newTree.parent = parent;
 
   return newTree;
 };
@@ -13,31 +13,33 @@ var treeMethods = {};
 treeMethods.addChild = function(value) {
   if (!this.children) {
     var childArr = [];
-    var node = Tree(value);
+    var node = Tree(value, this);
     childArr.push(node);
     this.children = childArr;
   } else {
-    var node = Tree(value);
+    var node = Tree(value, this);
     this.children.push(node);
   }
 };
 
 treeMethods.contains = function(target) {
   var result = false;
-
   var traverse = function(node) {
-    if (node.value === target) {
-      result = true;
-    } 
-
-    if (node.children) {
-      node.children.forEach(x => traverse(x));
-    }
+    node.value === target ? result = true : null;
+    node.children ? node.children.forEach(x => traverse(x)) : null;
   };
   traverse(this);
   return result;
 };
 
+treeMethods.removeFromParent = function() {
+  for (var i = 0; i < this.parent.children.length; i++) {
+    if (this.parent.children[i] === this) {
+      this.parent.children.splice(i, 1);
+    }
+  }
+  this.parent = null;
+};
 
 
 /*
