@@ -55,6 +55,16 @@ describe('tree', function() {
     expect(tree.contains(6)).to.equal(true);
   });
 
+  it('it should apply callback to every node in tree', function() {
+    tree.addChild(5);
+    tree.addChild(6);
+    tree.traverse(function(tree) {
+      tree.value = tree.value * 2;
+    });
+    expect(tree.children[0].value).to.equal(10);
+    expect(tree.children[1].value).to.equal(12);
+  });
+
 
 
 });

@@ -26,7 +26,7 @@ treeMethods.contains = function(target) {
   var result = false;
   var traverse = function(node) {
     node.value === target ? result = true : null;
-    node.children ? node.children.forEach(x => traverse(x)) : null;
+    node.children ? node.children.forEach(x  => traverse(x)) : null;
   };
   traverse(this);
   return result;
@@ -39,6 +39,16 @@ treeMethods.removeFromParent = function() {
     }
   }
   this.parent = null;
+};
+
+treeMethods.traverse = function(callback) {
+  callback(this);
+  // for each item in child, call traverse on it
+  if (!!this.children) {
+    for (var i = 0; i < this.children.length; i++) {
+      this.children[i].traverse(callback);
+    }
+  }
 };
 
 
