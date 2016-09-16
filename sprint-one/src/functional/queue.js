@@ -17,7 +17,7 @@ var Queue = function() {
     if (counter - loc > 0) {
       loc++;
     }
-    return storage[loc-1];
+    return storage[loc - 1];
   };
 
   someInstance.size = function() {
@@ -26,3 +26,20 @@ var Queue = function() {
 
   return someInstance;
 };
+
+
+
+var queues = [];
+
+var loop = function() {
+  for (var i = 0; i < 1000000; i++) {
+    var x = Queue();
+    queues.push(x);
+  }
+};
+
+loop();
+
+console.log(queues);
+
+

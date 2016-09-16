@@ -24,3 +24,18 @@ Queue.prototype.dequeue = function() {
 };
 
 
+
+var queues = [];
+
+var loop = function() {
+  for (var i = 0; i < 1000000; i++) {
+    var x = new Queue();
+    queues.push(x);
+  }
+};
+
+loop();
+
+console.log(queues);
+
+

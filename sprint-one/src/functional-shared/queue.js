@@ -36,3 +36,19 @@ var queueMethods = {
 };
 
 
+var queues = [];
+
+var loop = function() {
+  for (var i = 0; i < 1000000; i++) {
+    var x = Queue();
+    queues.push(x);
+  }
+};
+
+loop();
+
+console.log(queues);
+
+
+
+
