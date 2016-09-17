@@ -36,4 +36,31 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3]);
   });
+
+  it('should log nodes in a breadth first approach', function() {
+    var number = [4, 12, 2, 6, 10, 14, 1, 3, 5, 7];
+    number.forEach( x => binarySearchTree.insert(x));
+    expect(binarySearchTree.breadthFirstLog()).to.eql([5, 4, 12, 2, 6, 14, 1, 3, 10, 7]);
+  });
+
+  it('should be able to find unbalanced tree', function() {
+    var number = [4, 12, 2, 6, 10, 14, 1, 3, 5, 7];
+    number.forEach( x => binarySearchTree.insert(x));
+    expect(binarySearchTree.unbalanced()).to.equal(false);
+    binarySearchTree.insert(8);
+    expect(binarySearchTree.unbalanced()).to.equal(false);
+    binarySearchTree.insert(9);
+    expect(binarySearchTree.unbalanced()).to.equal(true);
+  });
+
+  it('should be able to balance itself', function() {
+    var number = [4, 12, 2, 6, 10, 14, 1, 3, 5, 7, 8, 9];
+    number.forEach( x => binarySearchTree.insert(x));
+    // console.log(binarySearchTree.rearrange());
+    // console.log(binarySearchTree.balanceSelf());
+    console.log(binarySearchTree);
+    // console.log(binarySearchTree);
+    // expect(binarySearchTree.balanceSelf()).to.equal(true);
+
+  });
 });

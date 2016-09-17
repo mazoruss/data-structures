@@ -26,7 +26,7 @@ treeMethods.contains = function(target) {
   var result = false;
   var traverse = function(node) {
     node.value === target ? result = true : null;
-    node.children ? node.children.forEach(x  => traverse(x)) : null;
+    node.children ? node.children.forEach(x => traverse(x)) : null;
   };
   traverse(this);
   return result;

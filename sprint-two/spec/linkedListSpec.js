@@ -100,7 +100,6 @@ describe('linkedList', function() {
     expect(dLinkedList.head.next.value).to.equal(5);
     expect(dLinkedList.tail.value).to.equal(5);
     expect(dLinkedList.tail.previous.value).to.equal(4);
-    console.log(dLinkedList);
   });
 
   it('DLL should be able to addToTail', function() {
@@ -112,7 +111,6 @@ describe('linkedList', function() {
     expect(dLinkedList.tail.previous.value).to.equal(4);
     expect(dLinkedList.head.value).to.equal(4);
     expect(dLinkedList.head.next.value).to.equal(5);
-    console.log(dLinkedList);
   });
 
   it('DLL should be able to remove tail', function() {
