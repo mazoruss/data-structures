@@ -55,6 +55,7 @@ describe('binarySearchTree', function() {
 
   it('should be able to balance itself', function() {
     var number = [4, 12, 2, 6, 10, 14, 1, 3, 5, 7, 8, 9];
+    // var number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
     number.forEach( x => binarySearchTree.insert(x));
     // console.log(binarySearchTree.rearrange());
     // console.log(binarySearchTree.balanceSelf());

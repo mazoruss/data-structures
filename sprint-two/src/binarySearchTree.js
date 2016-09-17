@@ -117,7 +117,6 @@ BSTMethods.flatten = function() {
   return result;
 };
 
-
 BSTMethods.balanceSelf = function() {
   var array = this.flatten();
   var getMid = function(array) {
@@ -143,6 +142,8 @@ BSTMethods.balanceSelf = function() {
   var balanced = getMid(array);
   return balanced;
 };
+
+
 
 /*
  * Complexity: What is the time complexity of the above functions?
